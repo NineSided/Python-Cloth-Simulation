@@ -1,12 +1,15 @@
 import pygame
 
 class Cloth:
-	def __init__(self, origin, verticies, size):
-		self.rect = pygame.rect(origin[0], origin[1], size, size)
-		self.
+	def __init__(self, verticies):
+		self.verticies = verticies
 
-	def update(self):
-		pass
+	def update(self, surface):
+		#for vert in self.verticies:
+		#	vert.update()
 
-	def show(self):
-		pass
+		self.show(surface)
+
+	def show(self, surface):
+		for vert in self.verticies:
+			pygame.draw.circle(surface, vert.color, (vert.rect.x, vert.rect.y), vert.size)
