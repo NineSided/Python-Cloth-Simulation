@@ -18,16 +18,6 @@ newvert = Vertex(origin=(200, 100))
 cloth.verticies[0].connectives.append(newvert)
 cloth.verticies.append(newvert)
 
-newvert = Vertex(origin=(200, 200))
-cloth.verticies[1].connectives.append(newvert)
-cloth.verticies.append(newvert)
-
-newvert = Vertex(origin=(100, 200))
-cloth.verticies[2].connectives.append(newvert)
-cloth.verticies.append(newvert)
-
-cloth.verticies[3].connectives.append(cloth.verticies[0])
-
 while 1:
 	window.fill((50, 50, 50))
 

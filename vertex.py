@@ -18,19 +18,19 @@ class Vertex:
 			dx, dy = self.rect.x-c.rect.x, self.rect.y-c.rect.y
 			angle = math.atan2(dy, dx)
 			mx, my = math.cos(angle), math.sin(angle)
-			
+
+			m = (mx, my)
+			c.movements.append(m)
+
+		for c in self.connectives:
 			distance = math.dist((self.rect.x, self.rect.y), (c.rect.x, c.rect.y))
+			dist = distance*0.1
 
-			print(mx, my)
-			if abs(distance) > 0:
-				m = (mx, my)
-				c.movements.append(m)
-
-		if self.anchored == False:
-			self.yvel += 0.2
-			if self.yvel > 1:
-				self.yvel = 1
-			self.movements.append((0, self.yvel))
+		#if self.anchored == False:
+		#	self.yvel += 0.2
+		#	if self.yvel > 3:
+		#		self.yvel = 3
+		#	self.movements.append((0, self.yvel))
 			
 		for m in self.movements:
 			self.movement.x += m[0]
